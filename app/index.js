@@ -11,6 +11,7 @@ const App = () => (
             text='Custom Button'
             width='100%'
             onPress={() => {}}
+            
         />
         <CustomTextInput
             label='Custom Text'
