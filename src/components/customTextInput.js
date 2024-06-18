@@ -16,6 +16,7 @@ const CustomTextInput = ({
             borderWidth: 2,
             borderColor: '#DDD',
             padding: 10,
+            borderRadius: 8,
         },
     })
 
