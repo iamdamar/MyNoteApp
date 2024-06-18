@@ -8,6 +8,7 @@ const CustomButton = ({
     onPress,
     fontSize = 16,
     width = 120,
+    
 }) => {
     const styles = StyleSheet.create({
         button: {
@@ -15,6 +16,7 @@ const CustomButton = ({
             backgroundColor,
             width,
             padding: 10,
+            borderRadius: 6,
         },
         buttonText: {
             fontSize,

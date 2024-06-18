@@ -12,7 +12,7 @@ const NoteCard = ({item, setCurrentPage, deleteNote}) => (
         </Text>
         <View style={styles.buttons}>
             <CustomButton
-                backgroundColor="#FFC300"
+                backgroundColor="#DDDDDD"
                 color="#151D3B"
                 text="Ubah"
                 fontSize={12}
@@ -38,8 +38,8 @@ const NoteCard = ({item, setCurrentPage, deleteNote}) => (
 const Home = ({noteList, setCurrentPage, deleteNote}) => (
     <View style={styles.container}>
         <CustomButton
-            backgroundColor="#DDD"
-            color="#203239"
+            backgroundColor="#00215E"
+            color="#fff"
             text="Tambahkan Note"
             width="100%"
             onPress={() => {
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     card: {
-        padding: 10,
+        padding: 20,
         marginVertical: 15,
         borderColor: '#DDD',
         borderWidth: 2,
-        borderRadius: 5,
+        borderRadius: 8,
     },
     cardTitle: {
         fontWeight: '600',
