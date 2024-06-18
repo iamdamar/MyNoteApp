@@ -36,7 +36,7 @@ const AddNote = ({setCurrentPage, addNote}) => {
                     width='100%'
                     onPress={() => {
                         addNote(title, desc)
-                        setCurrentPage('home')
+                        setCurrentPage({page: 'home'})
                     }}
                 />
             </View>
@@ -46,7 +46,7 @@ const AddNote = ({setCurrentPage, addNote}) => {
                     color='#203239'
                     text='Kembali ke Home'
                     width='100%'
-                    onPress={() => setCurrentPage('home')}
+                    onPress={() => setCurrentPage({page: 'home'})}
                 />
             </View>
         </View>

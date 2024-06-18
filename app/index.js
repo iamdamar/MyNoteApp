@@ -3,13 +3,14 @@ import Home from '../src/screens/home'
 import AddNote from '../src/screens/addNote'
 import EditNote from '../src/screens/editNote'
 
-const CurrentPageWidget = ({currentPage, noteList, setCurrentPage, addNote}) => {
-    switch (currentPage) {
+const CurrentPageWidget = ({currentPage, noteList, setCurrentPage, addNote, editNote}) => {
+    switch (currentPage.page) {
         case 'home':
             return (
                 <Home
                     noteList={noteList}
                     setCurrentPage={setCurrentPage}
+                    
                 />
             )
         case 'add':
@@ -17,14 +18,17 @@ const CurrentPageWidget = ({currentPage, noteList, setCurrentPage, addNote}) => 
                     setCurrentPage={setCurrentPage}
                     addNote={addNote} />
         case 'edit':
-            return <EditNote />
+            return <EditNote
+                    setCurrentPage={setCurrentPage}
+                    editNote={editNote}
+                    note={currentPage.note} />
         default:
             return <Home />
     }
 }
 
 const App = () => {
-    const [currentPage, setCurrentPage] = useState('home')
+    const [currentPage, setCurrentPage] = useState({page: 'home'})
 
     const [noteList, setNoteList] = useState([
         {
@@ -47,12 +51,19 @@ const App = () => {
         ])
     }
 
+    const editNote = (id, title, desc) => {
+        setNoteList(noteList.map(note =>
+            note.id === id ? { ...note, title, desc} : note
+        ))
+    }
+
     return (
         <CurrentPageWidget
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             noteList={noteList}
             addNote={addNote}
+            editNote={editNote}
         />
     )
 }

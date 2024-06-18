@@ -18,7 +18,7 @@ const NoteCard = ({item, setCurrentPage}) => (
                 fontSize={12}
                 width={100}
                 onPress={() => {
-                    setCurrentPage('edit')
+                    setCurrentPage({page: 'edit', note: item})
                 }}
             />
             <CustomButton
@@ -41,7 +41,7 @@ const Home = ({noteList, setCurrentPage}) => (
             text="Tambahkan Note"
             width="100%"
             onPress={() => {
-                setCurrentPage('add')
+                setCurrentPage({page: 'add'})
             }}
         />
         <FlatList
