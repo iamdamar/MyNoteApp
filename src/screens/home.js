@@ -2,7 +2,7 @@ import React from 'react'
 import {FlatList, StyleSheet, View, Text} from 'react-native'
 import CustomButton from '../components/customButton'
 
-const NoteCard = ({item, setCurrentPage}) => (
+const NoteCard = ({item, setCurrentPage, deleteNote}) => (
     <View style={styles.card}>
         <Text style={styles.cardTitle}>
             {item.title}
@@ -27,13 +27,15 @@ const NoteCard = ({item, setCurrentPage}) => (
                 text="Hapus"
                 fontSize={12}
                 width={100}
-                onPress={() => {}}
+                onPress={() => {
+                    deleteNote(item.id)
+                }}
             />
         </View>
     </View>
 )
 
-const Home = ({noteList, setCurrentPage}) => (
+const Home = ({noteList, setCurrentPage, deleteNote}) => (
     <View style={styles.container}>
         <CustomButton
             backgroundColor="#DDD"
@@ -51,6 +53,7 @@ const Home = ({noteList, setCurrentPage}) => (
                 <NoteCard
                     item={item}
                     setCurrentPage={setCurrentPage}
+                    deleteNote={deleteNote}
                 />
             )}
             keyExtractor={(item) => item.id}
