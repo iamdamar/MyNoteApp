@@ -1,13 +1,14 @@
 {
-    "buildCommand": "expo export -p web",
-    "outputDirectory": "dist",
-    "devCommand": "expo",
+    "buildCommand": "expo export:web",
+    "outputDirectory": "web-build",
+    "devCommand": "expo start",
     "cleanUrls": true,
-    "framework": "create-react-app",
+    "framework": null,
     "rewrites": [
-        {
-            "source": "/:path*",
-            "destination": "/"
-        }
+      {
+        "source": "/:path*",
+        "destination": "/"
+      }
     ]
-}
+  }
+  
