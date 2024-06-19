@@ -3,7 +3,7 @@
     "outputDirectory": "dist",
     "devCommand": "expo",
     "cleanUrls": "true",
-    "frameworks": null,
+    "framework": null,
     "rewrites": [
         {
             "source": "/:path*",
