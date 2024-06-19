@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import Home from '../src/screens/home'
-import AddNote from '../src/screens/addNote'
-import EditNote from '../src/screens/editNote'
+import Home from '../src/pages/home'
+import AddNote from '../src/pages/addNote'
+import EditNote from '../src/pages/editNote'
 
 const CurrentPageWidget = ({currentPage, noteList, setCurrentPage, addNote, editNote, deleteNote}) => {
     switch (currentPage.page) {
